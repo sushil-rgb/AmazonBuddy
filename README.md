@@ -1,6 +1,6 @@
-### AmazonBuddy Discord Bot
+### AmazonBuddy: Your Discord Companion for Product Information
 
-Meet AmazonBuddy, your Discord companion for seamless product information extraction! This Discord bot comes packed with features, allowing you to effortlessly retrieve the ASIN or ISBN of a product from a link sent in a direct message. Follow these steps to make the most of AmazonBuddy:
+Meet AmazonBuddy, your Discord companion for seamless product information extraction! This feature-rich Discord bot empowers you to effortlessly retrieve the ASIN or ISBN of a product from a link sent in a direct message. But that's not all – AmazonBuddy goes beyond identification; it can also retrieve detailed product reviews. Follow these steps to make the most of AmazonBuddy:
 
 1. **Invite the Bot:**
    - Bring AmazonBuddy to your Discord server by clicking [this invite link](https://discord.com/api/oauth2/authorize?client_id=1091094561314582528&permissions=1634235578438&scope=bot).
