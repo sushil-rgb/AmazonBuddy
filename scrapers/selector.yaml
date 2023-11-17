@@ -1,0 +1,32 @@
+# review cards:
+review_card: div.a-row.view-point
+pos_criti_review: div.a-row.view-point
+review_lists: div#cm_cr-review_list
+no_reviews: div[data-hook="cr-filter-info-review-rating-count"]
+
+# Reviews selectors
+review: "span.a-declarative a i span.a-icon-alt"
+review_count: "a.a-link-normal.s-underline-text.s-underline-link-text.s-link-style span.a-size-base.s-underline-text"
+image: "img.s-image"
+product_name: a[data-hook="product-link"]
+image: img[data-hook="cr-product-image"]
+profile_name: a.a-profile div.a-profile-content span.a-profile-name
+stars: i[data-hook="review-star-rating-view-point"] span.a-icon-alt
+stars_i: i[data-hook="review-star-rating"] span.a-icon-alt
+review_title: span[data-hook='review-title']
+review_title_i: a[data-hook="review-title"] span
+full_review: "div.a-row.a-spacing-top-mini span.a-size-base"
+full_review_i: "span[data-hook='review-body']"
+
+# Below selectors are for individual datas:
+name: "span#productTitle"
+price_uk: "span#price"
+price_us: "span.a-offscreen"
+price_us_i: "span.a-size-base.a-color-price"
+price_in: "span.a-price.aok-align-center.reinventPricePriceToPayMargin.priceToPay span.a-offscreen"
+availability: "div#availability span.a-size-medium.a-color-price"
+rating_count: "span#acrCustomerReviewText"
+image_link_i: "div.imgTagWrapper img"
+image_link_ii: "img.a-dynamic-image.image-stretch-vertical.frontImage"
+store: "a#bylineInfo"
+
