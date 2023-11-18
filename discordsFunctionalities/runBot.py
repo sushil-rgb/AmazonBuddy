@@ -32,8 +32,8 @@ def run_discord_bot():
         # Define regular expressions to match the message:
         asin_pattern = r"""^[A-Z0-9]{10}$"""
         regex_pattern = r"""^hi|hello|hey|yo"""
-        amazon_pattern = r'^!asin (https?://)?(www\.)?amazon\.(com|in|co\.uk)/.+'
-        review_pattern = r"""^!rev https:\/\/www\.amazon\.com\/[^\s]+$"""
+        amazon_pattern = r'^!asin (https?://)?(www\.)?amazon\.(com|in|co\.uk|fr|com\.mx|com\.br|com\.au|co\.jp|se|de|it)/.+'
+        review_pattern = r"""^!rev https:\/\/www\.amazon\.(com|in|co\.uk|fr|com\.mx|com\.br|com\.au|co\.jp|se|de|it)\/[^\s]+$"""
 
         # If the message is a greeting and is sent in a direct message:
         if message.guild is None and re.match(regex_pattern, message.content, re.IGNORECASE):
