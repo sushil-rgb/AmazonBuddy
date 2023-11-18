@@ -47,7 +47,7 @@ class Amazon:
             asin = "N/A"
         return asin
 
-    async def dataByAsin(self):
+    async def dataByLink(self):
         """
         Extracts product information from the Amazon product page by ASIN (Amazon Standard Identification Number).
 
@@ -62,9 +62,8 @@ class Amazon:
             -AttributeError: If the product information cannot be extracted from the page.
         """
         # Construct the URL using the ASIN:
-        url = f"https://www.amazon.com/dp/{self.userInput}"
         # Retrieve the page content using 'static_connection' method:
-        content = await Response(url).content()
+        content = await Response(self.userInput).content()
         soup = BeautifulSoup(content, 'lxml')
         try:
             # Try to extract the image link using the second first selector.
@@ -88,7 +87,7 @@ class Amazon:
             'Rating': await self.catch.text(soup.select_one(self.scrape['review'])),
             'Rating count': await self.catch.text(soup.select_one(self.scrape['rating_count'])),
             'Availability': availabilities,
-            'Hyperlink': url,
+            'Hyperlink': self.userInput,
             'Image': image_link,
             'Store': store,
             'Store link': store_link,

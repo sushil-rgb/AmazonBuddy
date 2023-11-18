@@ -38,6 +38,7 @@ async def menu(message, user, bot = None):
         embed.add_field(name = "B0CK3ZWT7X", value = "Extracts the product details from the provided ASIN.", inline = False)
         embed.add_field(name = "!asin `https://www.amazon.com/PlayStation-5-Console-CFI-1215A01X/dp/B0BCNKKZ91`", value = "Extracts ASIN from the provided product link.", inline = False)
         embed.add_field(name = "!rev `https://www.amazon.com/PlayStation-5-Console-CFI-1215A01X/dp/B0BCNKKZ91`", value = "Extracts the top positive and top critical review of the product.", inline = False)
+        embed.add_field(name = "!info `https://www.amazon.com/PlayStation-5-Console-CFI-1215A01X/dp/B0BCNKKZ91`", value = "Extracts the detail product informations.", inline = False)
         embed.set_footer(text = 'Powered by Python', icon_url = 'https://logos-download.com/wp-content/uploads/2016/10/Python_logo_icon.png')
         embed.set_author(name = "Sushil", url = "https://www.github.com/sushil-rgb", icon_url = "https://avatars.githubusercontent.com/u/107347115?s=400&u=7a5fbfe85d59d828d52b407c999474c8938325c7&v=4")
         embed.timestamp = datetime.datetime.now()
@@ -50,7 +51,7 @@ async def menu(message, user, bot = None):
         embed.add_field(name = "Example Usage:",
                         value = "!asin `[product link]` - Extracts ASIN from the provided product link. \n"
                                 "!rev `[product link]` - Extracts product reviews from the provided product link. \n"
-                                "`[B0CK3ZWT7X]` - Retrieves detailed product information using the provided ASIN. \n",
+                                "!info `[product link]` - Retrieves detailed product information using the provided link. \n",
                         inline = False
                         )
         embed.set_footer(text = 'Powered by Python', icon_url = 'https://logos-download.com/wp-content/uploads/2016/10/Python_logo_icon.png')
@@ -99,7 +100,7 @@ async def on_ready():
 
 async def asin_isbn(userInput, user):
     """
-    This function takes a user object and a user input as parameters, calls the Amazon class to get ASIN and ISBN numbers, 
+    This function takes a user object and a user input as parameters, calls the Amazon class to get ASIN and ISBN numbers,
     and sends the results to the user.
 
     Args:
@@ -113,9 +114,9 @@ async def asin_isbn(userInput, user):
     await user.send(datas)
 
 
-async def getdataByasin(userInput, user):
+async def getdataByLink(userInput, user):
     """
-    This function takes a user input and a suer object as parameters, call the Amazon class to get product data using ASIN, 
+    This function takes a user input and a suer object as parameters, call the Amazon class to get product data using ASIN,
     creates a discord embed with the product data, and send the embed to the user.
 
     Args:
@@ -126,7 +127,7 @@ async def getdataByasin(userInput, user):
         -None
     """
     try:
-        datas = await Amazon(userInput).dataByAsin()
+        datas = await Amazon(userInput).dataByLink()
         name = datas['Name']
         hyperlink = datas['Hyperlink']
         embed = discord.Embed(title = name, url = hyperlink, color = 0xff9900)

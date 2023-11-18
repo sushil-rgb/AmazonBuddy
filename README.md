@@ -23,7 +23,7 @@ Meet AmazonBuddy, your Discord companion for seamless product information extrac
 4. **Fetch Product Details:**
     - To retrieve product details, use the following command:
     ```
-        <asin_code>
+        !info <product_link>
     ```
     - Replace `<asin_code>` with the desired ASIN, and AmazonBuddy will provide detailed information about the corresponding product.
 

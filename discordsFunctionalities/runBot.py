@@ -1,4 +1,4 @@
-from .sendMessages import menu, on_ready, asin_isbn, getdataByasin, productReview
+from .sendMessages import menu, on_ready, asin_isbn, getdataByLink, productReview
 import discord
 import os
 import re
@@ -30,7 +30,6 @@ def run_discord_bot():
         channel = str(message.channel)
         print(f'{username} said: {user_message} {channel}.')
         # Define regular expressions to match the message:
-        asin_pattern = r"""^[A-Z0-9]{10}$"""
         regex_pattern = r"""^hi|hello|hey|yo"""
         amazon_pattern = r'^!asin (https?://)?(www\.)?amazon\.(com|in|co\.uk|fr|com\.mx|com\.br|com\.au|co\.jp|se|de|it)/.+'
         review_pattern = r"""^!rev https:\/\/www\.amazon\.(com|in|co\.uk|fr|com\.mx|com\.br|com\.au|co\.jp|se|de|it)\/[^\s]+$"""
@@ -54,9 +53,10 @@ def run_discord_bot():
             url = user_message.split()[-1]
             await asin_isbn(url, message.author)
         # IF the message is an ASIN/ISBN and is sent in a direct message:
-        elif message.guild is None and (re.match(asin_pattern, message.content)):
+        elif message.guild is None and message.content == '!info':
+            url = user_message.split()[-1]
             await message.author.send(f"Please wait. Fetching data from Amazon.")
-            await getdataByasin(user_message, message.author)
+            await getdataByLink(url, message.author)
         elif message.guild is None and (re.match(review_pattern, message.content)):
             url = user_message.split()[-1]
             await message.author.send(f"Please wait. Fetching reviews.")
