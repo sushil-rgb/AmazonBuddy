@@ -156,7 +156,10 @@ async def productReview(userInput, user):
         -None
     """
     try:
-        datas = await Amazon(userInput).product_review()
+        amazon = Amazon(userInput)
+        asin = await amazon.getASIN()
+        datas = await amazon.product_review()
+        review_url = f"https://www.amazon.com/product-reviews/{asin}"
         if isinstance(datas, dict):
             positive_review = datas['top positive review']['review']
             critcal_review = datas['top critical review']['review']
@@ -169,7 +172,7 @@ async def productReview(userInput, user):
             positive_embed.add_field(name = "Title", value = datas['top positive review']['title'], inline = False)
             if len(positive_review) >= 150:
                 positive_embed.add_field(name = "Review", value = f"""{datas['top positive review']['review'][:150]}...""", inline = False)
-                positive_embed.add_field(name = "Read more", value = f"[Full Review]({userInput})", inline = False)
+                positive_embed.add_field(name = "Read more", value = f"[Full Review]({review_url})", inline = False)
             else:
                 positive_embed.add_field(name = "Review", value = datas['top positive review']['review'])
             positive_embed.set_thumbnail(url = datas["top positive review"]['image'])
@@ -185,7 +188,7 @@ async def productReview(userInput, user):
             critical_embed.add_field(name = "Title", value = datas['top critical review']['title'], inline = False)
             if len(critcal_review) >= 150:
                 critical_embed.add_field(name = "Review", value = f"""{datas['top critical review']['review'][:150]}...""", inline = False)
-                critical_embed.add_field(name = "Read more", value = f"[Full Review]({userInput})", inline = False)
+                critical_embed.add_field(name = "Read more", value = f"[Full Review]({review_url})", inline = False)
             else:
                 critical_embed.add_field(name = "Review", value = datas['top critical review']['review'])
             critical_embed.set_thumbnail(url = datas["top critical review"]['image'])
