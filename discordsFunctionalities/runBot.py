@@ -33,6 +33,7 @@ def run_discord_bot():
         regex_pattern = r"""^hi|hello|hey|yo"""
         amazon_pattern = r'^!asin (https?://)?(www\.)?amazon\.(com|in|co\.uk|fr|com\.mx|com\.br|com\.au|co\.jp|se|de|it)/.+'
         review_pattern = r"""^!rev https:\/\/www\.amazon\.(com|in|co\.uk|fr|com\.mx|com\.br|com\.au|co\.jp|se|de|it)\/[^\s]+$"""
+        info_pattern = r"""^!info https:\/\/www\.amazon\.(com|in|co\.uk|fr|com\.mx|com\.br|com\.au|co\.jp|se|de|it)\/[^\s]+$"""
 
         # If the message is a greeting and is sent in a direct message:
         if message.guild is None and re.match(regex_pattern, message.content, re.IGNORECASE):
@@ -53,7 +54,7 @@ def run_discord_bot():
             url = user_message.split()[-1]
             await asin_isbn(url, message.author)
         # IF the message is an ASIN/ISBN and is sent in a direct message:
-        elif message.guild is None and message.content == '!info':
+        elif message.guild is None and re.search(info_pattern, user_message):
             url = user_message.split()[-1]
             await message.author.send(f"Please wait. Fetching data from Amazon.")
             await getdataByLink(url, message.author)
