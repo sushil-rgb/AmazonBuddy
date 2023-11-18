@@ -62,7 +62,7 @@ class Amazon:
             -AttributeError: If the product information cannot be extracted from the page.
         """
         # Construct the URL using the ASIN:
-        url = f"https://www.amazon.{self.country_domain}/dp/{self.userInput}"
+        url = f"https://www.amazon.com/dp/{self.userInput}"
         # Retrieve the page content using 'static_connection' method:
         content = await Response(url).content()
         soup = BeautifulSoup(content, 'lxml')
