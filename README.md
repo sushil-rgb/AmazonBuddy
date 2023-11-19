@@ -25,12 +25,22 @@ Meet AmazonBuddy, your Discord companion for seamless product information extrac
     ```
         !info <product_link>
     ```
-    - Replace `<asin_code>` with the desired ASIN, and AmazonBuddy will provide detailed information about the corresponding product.
+    - Replace `prdouct_link` with the desired link, and AmazonBuddy will provide detailed information about the corresponding product.
 
 <p align='center'><img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWU0YjJjMTEyODBmYzI0Mjk1Mjg1YTdmMTVkYWNiNGM5YWFkNDVkZSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/Jg3cKSlnweCsRp5RC1/giphy.gif" alt="Discord bot"></p>
 
-**Note:**
-- The bot is currently optimized for US Amazon products on the ".com" domain.
+**Supported domains:**
+- ".com"    (US)
+- ".in"     (India)
+- ".co.uk"  (UK)
+- ".fr"     (France)
+- ".com.mx" (Mexico)
+- ".com.br" (Brazil)
+- ".com.au" (Australia)
+- ".com.jp" (Japan)
+- ".se"     (Sweden)
+- ".de"     (Germany)
+- ".it"     (Italy)
 
 **Important:**
 - Exercise caution and use AmazonBuddy responsibly, adhering to Amazon's terms of service to avoid potential issues with website access.

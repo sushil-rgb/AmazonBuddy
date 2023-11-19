@@ -78,7 +78,7 @@ class Amazon:
         except AttributeError:
             availabilities = 'In stock'
         store = await self.catch.text(soup.select_one(self.scrape['store']))
-        store_link = f"""https://www.amazon.com{await self.catch.attributes(soup.select_one(self.scrape['store']), 'href')}"""
+        store_link = f"""https://www.amazon.{self.country_domain}{await self.catch.attributes(soup.select_one(self.scrape['store']), 'href')}"""
         # Construct the data dictionary containing product information:
         datas = {
             'Name': await self.catch.text(soup.select_one(self.scrape['name'])),

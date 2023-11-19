@@ -35,10 +35,9 @@ async def menu(message, user, bot = None):
 
     if message == '!commands':
         embed = discord.Embed(title ='Bot menu', description = "List of available commands and their explanation.", color = 0xff9900)
-        embed.add_field(name = "B0CK3ZWT7X", value = "Extracts the product details from the provided ASIN.", inline = False)
         embed.add_field(name = "!asin `https://www.amazon.com/PlayStation-5-Console-CFI-1215A01X/dp/B0BCNKKZ91`", value = "Extracts ASIN from the provided product link.", inline = False)
         embed.add_field(name = "!rev `https://www.amazon.com/PlayStation-5-Console-CFI-1215A01X/dp/B0BCNKKZ91`", value = "Extracts the top positive and top critical review of the product.", inline = False)
-        embed.add_field(name = "!info `https://www.amazon.com/PlayStation-5-Console-CFI-1215A01X/dp/B0BCNKKZ91`", value = "Extracts the detail product informations.", inline = False)
+        embed.add_field(name = "!info `https://www.amazon.com/PlayStation-5-Console-CFI-1215A01X/dp/B0BCNKKZ91`", value = "Extracts the detailed product informations.", inline = False)
         embed.set_footer(text = 'Powered by Python', icon_url = 'https://logos-download.com/wp-content/uploads/2016/10/Python_logo_icon.png')
         embed.set_author(name = "Sushil", url = "https://www.github.com/sushil-rgb", icon_url = "https://avatars.githubusercontent.com/u/107347115?s=400&u=7a5fbfe85d59d828d52b407c999474c8938325c7&v=4")
         embed.timestamp = datetime.datetime.now()
@@ -141,7 +140,7 @@ async def getdataByLink(userInput, user):
         embed.set_footer(text = 'Powered by Python', icon_url = 'https://logos-download.com/wp-content/uploads/2016/10/Python_logo_icon.png')
         await user.send(embed = embed)
     except Exception as e:
-        await user.send(f'Content loading error. Please try again in few minutes. Error:> {e}')
+        await user.send(f'Content loading error. Please try again in few minutes.')
 
 
 async def productReview(userInput, user):
@@ -200,5 +199,5 @@ async def productReview(userInput, user):
             embed = discord.Embed(title = datas, url = userInput, color = 0xFF0000)
             await user.send(embed = embed)
     except Exception as e:
-        await user.send(f"Content loading error. Please try again in few minutes. Error:> {e}")
+        await user.send(f"Content loading error. Please try again in few minutes.")
 
