@@ -2,6 +2,8 @@
 
 Meet AmazonBuddy, your Discord companion for seamless product information extraction! This feature-rich Discord bot empowers you to effortlessly retrieve the ASIN or ISBN of a product from a link sent in a direct message. But that's not all – AmazonBuddy goes beyond identification; it can also retrieve detailed product reviews. Follow these steps to make the most of AmazonBuddy:
 
+<p align='center'><img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMGVvZmlxNnJtaXVubmhoeWl3Nmd1cXpxeWZucDRrODdjdjZnamlyYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VD4mtzTGd3ZgEovYtr/giphy.gif" alt="Discord bot"></p>
+
 1. **Invite the Bot:**
    - Bring AmazonBuddy to your Discord server by clicking [this invite link](https://discord.com/api/oauth2/authorize?client_id=1091094561314582528&permissions=1634235578438&scope=bot).
 
@@ -27,20 +29,18 @@ Meet AmazonBuddy, your Discord companion for seamless product information extrac
     ```
     - Replace `prdouct_link` with the desired link, and AmazonBuddy will provide detailed information about the corresponding product.
 
-<p align='center'><img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWU0YjJjMTEyODBmYzI0Mjk1Mjg1YTdmMTVkYWNiNGM5YWFkNDVkZSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/Jg3cKSlnweCsRp5RC1/giphy.gif" alt="Discord bot"></p>
-
 **Supported domains:**
-- ".com"    (US)
-- ".in"     (India)
-- ".co.uk"  (UK)
-- ".fr"     (France)
-- ".com.mx" (Mexico)
-- ".com.br" (Brazil)
-- ".com.au" (Australia)
-- ".com.jp" (Japan)
-- ".se"     (Sweden)
-- ".de"     (Germany)
-- ".it"     (Italy)
+- <b>".in"</b>           (India)
+- <b>".com"</b>          (US)
+- <b>".co.uk"</b>        (UK)
+- <b>".fr"</b>           (France)
+- <b>".com.mx"</b>       (Mexico)
+- <b>".com.br"</b>       (Brazil)
+- <b>".com.au"</b>       (Australia)
+- <b><del>".com.jp       (Japan)</del>"</b>
+- <b>".se"</b>           (Sweden)
+- <b>".de"</b>           (Germany)
+- <b>".it"</b>           (Italy)
 
 **Important:**
 - Exercise caution and use AmazonBuddy responsibly, adhering to Amazon's terms of service to avoid potential issues with website access.

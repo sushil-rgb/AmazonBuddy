@@ -31,9 +31,9 @@ def run_discord_bot():
         print(f'{username} said: {user_message} {channel}.')
         # Define regular expressions to match the message:
         regex_pattern = r"""^hi|hello|hey|yo"""
-        amazon_pattern = r'^!asin (https?://)?(www\.)?amazon\.(com|in|co\.uk|fr|com\.mx|com\.br|com\.au|co\.jp|se|de|it)/.+'
-        review_pattern = r"""^!rev https:\/\/www\.amazon\.(com|in|co\.uk|fr|com\.mx|com\.br|com\.au|co\.jp|se|de|it)\/[^\s]+$"""
-        info_pattern = r"""^!info https:\/\/www\.amazon\.(com|in|co\.uk|fr|com\.mx|com\.br|com\.au|co\.jp|se|de|it)\/[^\s]+$"""
+        amazon_pattern = r'^!asin (https?://)?(www\.)?amazon\.(com|in|co\.uk|fr|com\.mx|com\.br|com\.au|co\.jp|se|de|it|com\.be)/.+'
+        review_pattern = r"""^!rev https:\/\/www\.amazon\.(com|in|co\.uk|fr|com\.mx|com\.br|com\.au|co\.jp|se|de|it|com\.be)\/[^\s]+$"""
+        info_pattern = r"""^!info https:\/\/www\.amazon\.(com|in|co\.uk|fr|com\.mx|com\.br|com\.au|co\.jp|se|de|it|com\.be)\/[^\s]+$"""
 
         # If the message is a greeting and is sent in a direct message:
         if message.guild is None and re.match(regex_pattern, message.content, re.IGNORECASE):
