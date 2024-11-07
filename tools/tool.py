@@ -1,3 +1,4 @@
+from fake_useragent import UserAgent
 from urllib.parse import urlparse
 import itertools
 import aiohttp
@@ -173,18 +174,8 @@ async def randomTime(val):
 
 
 def userAgents():
-    """
-    Returns a random user agent string from a file containing a list of user agents.
-
-    Args:
-        -None
-
-    Returns:
-        -A string representing a ranom user agent.
-    """
-    with open('tools//user-agents.txt') as f:
-        agents = f.read().split("\n")
-        return random_values(agents)
+    agents = UserAgent()
+    return agents.random
 
 
 def yaml_load(selectors):
